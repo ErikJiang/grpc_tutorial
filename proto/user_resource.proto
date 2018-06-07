@@ -3,9 +3,46 @@ syntax = "proto3";
 package user_resource;
 
 service UserService {
-  rpc getUserList() returns (UserSets);
-  rpc getUserInfo(UserId) returns (SingleUser)
-  rpc addUserInfo(NewUser) returns (Status)
-  rpc editUserInfo(EditUser) returns (SingleUser)
-  rpc delUserInfo(UserId) returns (Status)
+  rpc getUserList(UserQuery) returns (UserCollect);
+  rpc getUserInfo(UserQuery) returns (UserItem);
+  rpc addUserInfo(UserItem) returns (UserReply);
+  rpc editUserInfo(UserItem) returns (UserItem);
+  rpc delUserInfo(UserQuery) returns (UserReply);
+}
+
+message UserItem {
+  int32 user_id = 1;
+  string name = 2;
+  string email = 3;
+  float height = 4;
+  float weight = 5;
+  enum City {
+    YAAN = 0;
+    LESHAN = 1;
+    CHENGDU = 2;
+    BAZHONG = 3;
+    NANCHONG = 4;
+    MIANYANG = 5;
+  }
+  City city = 6;
+  enum Position {
+    ENGINEER = 0;
+    DESIGNER = 1;
+    ANALYST = 2;
+    ARCHITECT = 3;
+    RESEARCHER = 4;
+  }
+  Position position = 7;
+}
+
+message UserCollect {
+  repeated UserItem items = 1;
+}
+
+message UserQuery {
+  int32 user_id = 1;
+}
+
+message UserReply {
+  bool status = 1;
 }

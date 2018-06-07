@@ -1,0 +1,22 @@
+{
+  "name": "grpc_tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiangInk/grpc_tutorial.git"
+  },
+  "author": "jiangink",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JiangInk/grpc_tutorial/issues"
+  },
+  "homepage": "https://github.com/JiangInk/grpc_tutorial#readme",
+  "dependencies": {
+    "grpc": "^1.12.2"
+  }
+}
