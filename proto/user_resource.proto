@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package user_resource;
+
+service UserService {
+  rpc getUserList() returns (UserSets);
+  rpc getUserInfo(UserId) returns (SingleUser)
+  rpc addUserInfo(NewUser) returns (Status)
+  rpc editUserInfo(EditUser) returns (SingleUser)
+  rpc delUserInfo(UserId) returns (Status)
+}
